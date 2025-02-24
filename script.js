@@ -1,6 +1,7 @@
 let angle = 0;
 const carousel = document.querySelector('.curved-carousel');
 const items = document.querySelectorAll('.carousel-item');
+<<<<<<< HEAD
 const totalItems = items.length;
 const radius = 250; // Tamanho do raio do carrossel
 let currentIndex = 0;
@@ -8,6 +9,13 @@ let isDragging = false;
 let startX = 0;
 
 function positionItems() {
+=======
+const radius = 300; 
+let currentIndex = 0; 
+
+function positionItems() {
+    const totalItems = items.length;
+>>>>>>> 756818250e18570c900deefb679c1a57d9ecf05a
     const angleIncrement = 360 / totalItems;
 
     items.forEach((item, index) => {
@@ -15,11 +23,17 @@ function positionItems() {
         const x = Math.sin((itemAngle * Math.PI) / 180) * radius;
         const z = Math.cos((itemAngle * Math.PI) / 180) * radius;
 
+<<<<<<< HEAD
         item.style.transform = `translate3d(${x}px, 0, ${z}px) rotateY(${-itemAngle}deg)`;
         item.style.opacity = 1; // Garante que todas as imagens estejam visíveis
     });
 
     items.forEach((item, index) => {
+=======
+        item.style.transform = `translateX(${x}px) translateZ(${z}px) rotateY(${-itemAngle}deg)`;
+
+        // Adiciona a classe 'active' apenas ao item em frente
+>>>>>>> 756818250e18570c900deefb679c1a57d9ecf05a
         if (index === currentIndex) {
             item.classList.add('active');
         } else {
@@ -29,6 +43,10 @@ function positionItems() {
 }
 
 function rotateCarousel(direction) {
+<<<<<<< HEAD
+=======
+    const totalItems = items.length;
+>>>>>>> 756818250e18570c900deefb679c1a57d9ecf05a
     if (direction === "next") {
         currentIndex = (currentIndex + 1) % totalItems;
     } else {
@@ -39,6 +57,7 @@ function rotateCarousel(direction) {
     positionItems();
 }
 
+<<<<<<< HEAD
 document.getElementById('nextBtn').addEventListener('click', () => rotateCarousel("next"));
 document.getElementById('prevBtn').addEventListener('click', () => rotateCarousel("prev"));
 
@@ -173,3 +192,11 @@ particlesJS('particles-js', {
     },
     retina_detect: true
 });
+=======
+// Adiciona evento aos botões
+document.getElementById('nextBtn').addEventListener('click', () => rotateCarousel("next"));
+document.getElementById('prevBtn').addEventListener('click', () => rotateCarousel("prev"));
+
+// Inicializa a posição
+positionItems();
+>>>>>>> 756818250e18570c900deefb679c1a57d9ecf05a
