@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* Estilos gerais */
 body {
     font-family: 'Fredoka', sans-serif;
@@ -28,9 +27,7 @@ body {
     background-color: rgb(32, 32, 32);
     padding: 10px 15px; /* Reduz o padding */
     border-radius: 0 0 10px 10px; /* Bordas retas na parte superior e curvas na parte inferior */
-    border-left: 1px solid rgba(3, 205, 255, 0.8); /* Borda ao redor da barra de navegação */
-    border-right: 1px solid rgba(3, 205, 255, 0.8); /* Borda ao redor da barra de navegação */
-    border-bottom: 1px solid rgba(3, 205, 255, 0.8); /* Borda ao redor da barra de navegação */
+    border: 1px solid rgba(3, 205, 255, 0.8); /* Borda ao redor da barra de navegação */
     box-shadow: 0 0 20px rgba(3, 205, 255, 0.5); /* Efeito de sombra LED */
     top: 0; /* Ajusta a posição para o topo */
     left: 50%;
@@ -70,7 +67,7 @@ body {
 
 .menu li a {
     font-family: 'Times New Roman', Times, serif; 
-    font-size: 12px; /* Ajuste o tamanho do texto conforme necessário */
+    font-size: 14px; /* Ajuste o tamanho do texto conforme necessário */
     border: 1px solid rgba(3, 205, 255, 0.4); /* Borda azul fraca na parte superior */
     border-bottom: 2px solid rgba(3, 205, 255, 0.8); /* Borda azul forte na parte inferior */
     color: #fff;
@@ -100,207 +97,11 @@ body {
     width: 80%;
     height: 400px;
     perspective: 800px;
-=======
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Fredoka', sans-serif;
-    font-style: normal;
-    background-color: #000000;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%; 
-    padding: 0 10px; 
-    overflow-x: hidden;
-    overflow-y: auto; 
-}
-
-.username {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.username:hover {
-    text-decoration: underline;
-}
-
-.titulo {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    color: #FFFFFF;
-    width: 100%; 
-}
-
-.container {
-    text-align: center;
-    background-color: #000000;
-    padding: 20px;
-    border-radius: 40px;
-    width: 100%;
-    max-width: 500px; 
-    margin: 10px auto; 
-    overflow: hidden; 
-}
-.gif-container {
-    width: 200px;
-    height: 200px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-}
-
-.profile-gif {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    border-radius: 50%;
-}
-
-h1 {
-    font-size: 24px;
-    margin: 10px 0;
-}
-
-p {
-    font-size: 16px;
-    color: #FFFFFF;
-    margin: 10px 0;
-}
-
-.links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    align-items: center;
-}
-
-@keyframes shake {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(-5px); }
-    40% { transform: translateX(5px); }
-    60% { transform: translateX(-5px); }
-    80% { transform: translateX(5px); }
-    100% { transform: translateX(0); }
-}
-
-.link {
-    margin: 4px;
-    text-decoration: none;
-    color: #000000;
-    background-color: #FFFFFF;
-    padding: 20px 30px;
-    border: 2px solid #000000;
-    border-radius: 15px;
-    transition: transform 0.2s ease, background-color 0.1s ease;
-    font-weight: bold;
-    text-align: center;
-    box-shadow: 6px 10px 3px #eb02f3;
-    display: inline-block;
-    width: 100%;
-    max-width: 400px;
-    
-    
-    animation: shake 1s ease-in-out;
-}
-.link:hover {
-    transform: translateY(-5px);
-    background-color: #FFFFFF;
-}
-
-.link:active {
-    transform: translateY(2px);
-}
-
-.email-container {
-    text-align: center;
-    border-top: 1px solid #ccc;
-    padding-top: 10px;
-    margin-top: 20px; 
-}
-
-
-.email-icon {
-    font-size: 20px;
-    margin-right: 10px;
-    vertical-align: middle; 
-}
-
-
-.email-container a {
-    font-size: 16px;
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.email-container a:hover {
-    color: #ffffff; 
-}
-
-/* main */
-/* Barra de navegação fixa */
-.windows-nav {
-    width: 100%;
-    background-color: #2d2d2d;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
-.windows-nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-.windows-nav ul li {
-    margin-right: 20px;
-}
-
-.windows-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 5px 10px;
-    border-radius: 3px;
-    transition: background-color 0.3s ease;
-}
-
-.windows-nav ul li a:hover {
-    background-color: #4d4d4d;
-}
-
-/* Estilos para o carrossel 3D */
-.curved-carousel {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    margin-top: 100px;
-    perspective: 1200px; /* Perspectiva para efeito 3D */
->>>>>>> 756818250e18570c900deefb679c1a57d9ecf05a
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-<<<<<<< HEAD
 .carousel-item {
     position: absolute;
     width: 200px;
@@ -308,22 +109,12 @@ p {
     transform-style: preserve-3d;
     transition: transform 0.5s ease, filter 0.5s ease;
     opacity: 1; /* Garantindo visibilidade */
-=======
-/* Ajuste para centralizar os slides */
-.carousel-item {
-    position: absolute;
-    width: 200px;
-    height: 250px;
-    transform-style: preserve-3d;
-    transition: transform 0.5s ease, filter 0.5s ease;
->>>>>>> 756818250e18570c900deefb679c1a57d9ecf05a
 }
 
 .carousel-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-<<<<<<< HEAD
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -332,39 +123,20 @@ p {
     transform: scale(1.1); /* Destaque da imagem ativa */
 }
 
-=======
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    filter: blur(5px); /* Todas as imagens começam desfocadas */
-}
-
-/* Remove o desfoque da imagem ativa */
-.carousel-item.active img {
-    filter: blur(0);
-}
-
-/* Botões de navegação do carrossel */
->>>>>>> 756818250e18570c900deefb679c1a57d9ecf05a
 .carousel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.6);
     border: none;
-<<<<<<< HEAD
     padding: 10px 15px;
     font-size: 24px;
-=======
-    padding: 12px 18px;
-    font-size: 28px;
->>>>>>> 756818250e18570c900deefb679c1a57d9ecf05a
     cursor: pointer;
     z-index: 10;
     border-radius: 50%;
     transition: background 0.3s ease-in-out;
 }
 
-<<<<<<< HEAD
 #prevBtn {
     right: 270px;
 }
@@ -401,17 +173,4 @@ p {
         padding: 8px 12px;
         font-size: 20px;
     }
-=======
-.carousel-btn:hover {
-    background: rgba(255, 255, 255, 0.9);
-}
-
-/* Posicionamento dos botões de navegação */
-#prevBtn {
-    right: 1050px;
-}
-
-#nextBtn {
-    left: 1050px;
->>>>>>> 756818250e18570c900deefb679c1a57d9ecf05a
 }
