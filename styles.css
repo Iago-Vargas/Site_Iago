@@ -1,6 +1,6 @@
 /* Estilos gerais */
 body {
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
@@ -13,6 +13,7 @@ body {
     overflow-y: auto;
 }
 
+/* Aqui definimos o WallPaper, as particulas */
 #particles-js {
     position: fixed;
     width: 100%;
@@ -23,17 +24,20 @@ body {
     z-index: -1;  /* Asegure que as partículas fiquem atrás de outros elementos */
 }
 
+/* A barra, esta é a estrutura dela */
 .windows-nav {
     background-color: rgb(32, 32, 32);
-    padding: 10px 15px; /* Reduz o padding */
+    padding: 13px 25px; /* Reduz o padding */
     border-radius: 0 0 10px 10px; /* Bordas retas na parte superior e curvas na parte inferior */
-    border: 1px solid rgba(3, 205, 255, 0.8); /* Borda ao redor da barra de navegação */
-    box-shadow: 0 0 20px rgba(3, 205, 255, 0.5); /* Efeito de sombra LED */
+    border-left: 1px solid #22273F; /* Borda ao redor da barra de navegação */
+    border-right: 1px solid #22273F; /* Borda ao redor da barra de navegação */
+    border-bottom: 1px solid #22273F; /* Borda ao redor da barra de navegação */
+    box-shadow: 0 0 30px #22273F; /* Efeito de sombra LED */
     top: 0; /* Ajusta a posição para o topo */
     left: 50%;
     transform: translateX(-50%);
     width: 40%; /* Ajusta a largura */
-    max-width: 600px; /* Ajusta a largura máxima */
+    max-width: 500px; /* Ajusta a largura máxima */
     z-index: 1000;
     position: fixed;
     display: flex;
@@ -41,6 +45,7 @@ body {
     align-items: center;
 }
 
+/* Conteúdo da barra de navegação */
 .nav-content {
     display: flex;
     align-items: center;
@@ -48,6 +53,7 @@ body {
     justify-content: space-between; /* Espaça os itens do menu */
 }
 
+/* O menu da configuração */
 .menu {
     display: flex;
     list-style: none;
@@ -55,21 +61,20 @@ body {
     padding: 0;
     width: 100%;
     justify-content: space-between; /* Espaça os itens do menu */
+    flex-wrap: nowrap; /* Permite que os itens do menu fiquem na mesma linha */
 }
 
+/* Somente para o espaçamento entre os itens do menu */
 .menu li {
     margin: 0 5px; /* Ajusta o espaçamento entre os itens do menu */
 }
 
-.menu li:first-child a {
-    box-shadow: 0 0 20px rgba(3, 205, 255, 0.8); /* Efeito de luz brilhante no primeiro botão */
-}
-
+/* Estilo dos links do menu */
 .menu li a {
-    font-family: 'Times New Roman', Times, serif; 
-    font-size: 14px; /* Ajuste o tamanho do texto conforme necessário */
-    border: 1px solid rgba(3, 205, 255, 0.4); /* Borda azul fraca na parte superior */
-    border-bottom: 2px solid rgba(3, 205, 255, 0.8); /* Borda azul forte na parte inferior */
+    font-family:'Courier New', Courier, monospace;
+    font-size: 12px; /* Ajuste o tamanho do texto conforme necessário */
+    border: 1px solid rgba#48548f; /* Borda azul fraca na parte superior */
+    border-bottom: 2px solid rgba#48548f; /* Borda azul forte na parte inferior */
     color: #fff;
     text-decoration: none;
     padding: 5px 10px; /* Ajusta o padding */
@@ -77,11 +82,7 @@ body {
     transition: box-shadow 0.3s ease;
 }
 
-.menu li a:focus {
-    outline: none;
-    box-shadow: 0 0 10px 2px #00ffff; /* Efeito de borda azul neon */
-}
-
+/* Efeito de sombra ao passar o mouse */
 .carousel-container {
     position: relative;
     width: 100%;
@@ -92,6 +93,7 @@ body {
     margin-top: 220px;
 }
 
+/* Estilo do carrossel */
 .curved-carousel {
     position: relative;
     width: 80%;
@@ -102,15 +104,82 @@ body {
     align-items: center;
 }
 
+/* Estilo dos itens do carrossel */
 .carousel-item {
     position: absolute;
     width: 200px;
     height: 350px;
     transform-style: preserve-3d;
     transition: transform 0.5s ease, filter 0.5s ease;
-    opacity: 1; /* Garantindo visibilidade */
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Adiciona efeito de digitação dentro da imagem 1*/
+.typing-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 10px; 
+    color: white;
+    font-size: 1.5rem;
+    max-width: 80%;
+    padding: 10px;
+    text-align: center;
+    position: absolute;
+    top: 10px; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* Definindo valores da primeira imagem*/
+#typing-text{
+    font-family: 'Courier New', Courier, monospace;
+    color: #EBECEB;
+    text-shadow: 0 0 5px #160D08, 0 0 10px #160D08;
+    padding: 10px;
+    border-radius: 8px;
+    white-space: pre; /* Permite a quebra de linha */
+    width: auto;
+}
+
+/* Adiciona efeito e estrutura dentro da digitação da imagem 2 */
+.typing-container2 {
+    display: flex;
+    flex-direction: column; /* Organiza os textos em coluna */
+    align-items: center; /* Centraliza os textos horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    gap: 10px; /* Espaço entre os textos */
+    color: white;
+    font-size: 1.3rem;
+    max-width: 80%;
+    padding: 10px;
+    text-align: center;
+    position: absolute;
+    top: 60px; /* Ajuste conforme necessário */
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* Definindo valores da segunda imagem*/
+#typing-text2 {
+    font-family: 'Courier New', Courier, monospace;
+    color: #EBECEB;
+    text-shadow: 0 0 5px #160D08, 0 0 10px #160D08;
+    padding: 10px;
+    border-radius: 8px;
+    white-space: pre; /* Permite a quebra de linha */
+    width: auto;
+}
+
+/*Primeira e  Segunda imagem */
+#typing-text::after, #typing-text-2::after {
+    content: "";
+    animation: blink 0.7s infinite alternate;
+}
+
+/* Define a proporção do Carrosel */
 .carousel-item img {
     width: 100%;
     height: 100%;
@@ -119,58 +188,112 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.carousel-item.active {
-    transform: scale(1.1); /* Destaque da imagem ativa */
-}
-
-.carousel-btn {
-    position: absolute;
+/* Estrutura dos 3 carrosel se conversando entre si*/
+.carousel1, .carousel2, .carousel3 {
+    position: absolute;  
     top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.6);
-    border: none;
-    padding: 10px 15px;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 10;
-    border-radius: 50%;
-    transition: background 0.3s ease-in-out;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+    font-size: 1.5rem;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    width: 80%;
+    text-align: center;
+    display: none; 
 }
 
-#prevBtn {
-    right: 270px;
+/* Aqui mexo na imagem de Icon que tem na primeira imagem */
+.carousel1 img {
+    margin-top: 0px; 
+    width: 200px; 
+    height: auto;
+    background-color: transparent;
+    position: relative;
+    right: 20px;
+    top: 90px; 
+}
+/* Aqui mexo na imagem de Icon que tem na segunda imagem */
+.carousel2 img {
+    margin-top: 0px; /* Espaço entre o texto e a imagem adicional */
+    width: 200px; /* Ajuste o tamanho da imagem adicional conforme necessário */
+    height: auto;
+    background-color: transparent; /* Remove o fundo preto */
+    position: relative;
+    right: 20px;
+    top: 0px; /* Ajuste conforme necessário para descer a imagem */
 }
 
-#nextBtn {
-    left: 270px;
+/*Ativamos os Carroseis */
+.carousel-item.active .carousel1,
+.carousel-item.active .carousel2,
+.carousel-item.active .carousel3 {
+    display: block; /* Mostra o texto quando o item está ativo */
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .windows-nav {
-        padding: 10px;
-    }
 
-    .menu {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-    }
-
-    .carousel-container {
-        margin-top: 180px;
-    }
-
-    .curved-carousel {
-        height: 300px;
-    }
-
-    .carousel-item {
-        width: 150px;
-        height: 200px;
-    }
-
-    .carousel-btn {
-        padding: 8px 12px;
-        font-size: 20px;
-    }
+/* Estilo para os icones pulando na 2 pagina */
+.icon-spiral {
+    top: 50px;
+    left: 20px;
+    position: relative;
+    width: 90%; 
+    height: 150px; 
+    margin: 50px auto; 
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    align-items: center; 
 }
+/* Tamanho dos ícones */
+.icon-spiral img {
+    width: 30px; 
+    height: 30px;
+    animation: bounce 1s ease-in-out infinite;
+}
+/* Animação de pulinho */
+@keyframes bounce {
+    0% {
+        transform: translateY(0); 
+    }
+    30% {
+        transform: translateY(-20px); 
+    }
+    50% {
+        transform: translateY(0); 
+    }
+    70% {
+        transform: translateY(-10px); 
+    }
+    100% {
+        transform: translateY(0); 
+    }
+
+}
+/* Estilo para o contêiner de e-mail */
+.email-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    z-index: 1000; /* Garante que o contêiner de e-mail fique acima do carrossel */
+    position: absolute;
+    bottom: 20px; /* Posiciona o contêiner de e-mail no final da página */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.email-icon {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    color: #EBECEB;
+}
+
+.email-text {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1rem;
+    color: #EBECEB;
+    text-shadow: 0 0 5px #160D08, 0 0 10px #160D08;
+}
+
