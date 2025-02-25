@@ -1,8 +1,91 @@
+document.addEventListener('DOMContentLoaded', () => {
+    binaryToTextEffect("typing-text", ["Welcome!", "I am Iago! :)"], 100);
+    binaryToTextEffect("typing-text2", ["Programming","languages"], 100);
+});
+
+/**
+ * Efeito que começa como binário e transforma os números em letras progressivamente.
+ * @param {string} elementId - ID do elemento onde o texto será exibido
+ * @param {Array} lines - Array de strings representando cada linha do texto
+ * @param {number} delay - Tempo entre cada transformação (ms)
+ */
+function binaryToTextEffect(elementId, lines, delay = 100) {
+    const element = document.getElementById(elementId);
+    let binaryLines = lines.map(line => line.split('').map(() => (Math.random() > 0.5 ? '0' : '1')).join(''));
+    let currentIndex = 0;
+
+    function revealText() {
+        if (currentIndex < Math.max(...lines.map(line => line.length))) {
+            let tempLines = binaryLines.map((binaryLine, i) => {
+                let tempText = binaryLine.split('');
+                
+                // Mantém as letras já reveladas e altera apenas a próxima
+                for (let j = 0; j <= currentIndex; j++) {
+                    if (j < lines[i].length) {
+                        tempText[j] = lines[i][j];
+                    }
+                }
+                
+                return tempText.join('');
+            });
+
+            element.innerHTML = tempLines.join('<br>'); // Quebra linha entre os textos
+            currentIndex++;
+
+            setTimeout(revealText, delay);
+        } else {
+            // Após revelar o texto, começa a alternar as letras por números em loop
+            startAlternatingText(element, lines);
+        }
+    }
+    
+    element.innerHTML = binaryLines.join('<br>'); // Exibe os textos em binário primeiro
+    setTimeout(revealText, delay); // Começa a transformação para o texto real
+}
+
+/**
+ * Função que alterna entre letras e números aleatórios em loop
+ * @param {HTMLElement} element - Elemento onde o texto está sendo exibido
+ * @param {Array} originalLines - O texto original que foi revelado
+ */
+function startAlternatingText(element, originalLines) {
+    const lines = element.innerHTML.split('<br>');
+
+    setInterval(() => {
+        // Seleciona até 3 posições aleatórias para alternar
+        let swaps = 0;
+        const maxSwaps = 1;
+
+        // Faz as alternâncias de números no texto
+        while (swaps < maxSwaps) {
+            const lineIndex = Math.floor(Math.random() * lines.length); // Escolhe uma linha aleatória
+            const charIndex = Math.floor(Math.random() * lines[lineIndex].length); // Escolhe um caractere aleatório na linha
+
+            // Alterna entre número e a letra original
+            const originalChar = originalLines[lineIndex][charIndex]; // Pega o caractere original
+            const currentChar = lines[lineIndex][charIndex]; // Pega o caractere atual exibido
+
+            // Se o caractere atual for um número, volta para a letra original
+            if (/\d/.test(currentChar)) {
+                lines[lineIndex] = lines[lineIndex].substr(0, charIndex) + originalChar + lines[lineIndex].substr(charIndex + 1);
+            } else {
+                const randomNumber = Math.floor(Math.random() * 2); // Gera um número aleatório (0-9)
+                lines[lineIndex] = lines[lineIndex].substr(0, charIndex) + randomNumber + lines[lineIndex].substr(charIndex + 1);
+            }
+            swaps++;
+        }
+
+        element.innerHTML = lines.join('<br>'); // Atualiza o conteúdo com as trocas de números
+    }, 10500000000); // Alterna as letras a cada 1500ms
+}
+
+
+// Código existente para o carrossel e partículas
 let angle = 0;
 const carousel = document.querySelector('.curved-carousel');
 const items = document.querySelectorAll('.carousel-item');
 const totalItems = items.length;
-const radius = 250; // Tamanho do raio do carrossel
+const radius = 300; // Tamanho do raio do carrossel
 let currentIndex = 0;
 let isDragging = false;
 let startX = 0;
@@ -38,14 +121,64 @@ function rotateCarousel(direction) {
     angle -= 360 / totalItems * (direction === "next" ? 1 : -1);
     positionItems();
 }
+function showTextForCurrentItem() {
+    // Esconde todos os textos
+    document.querySelectorAll('.carousel-text').forEach(text => {
+        text.style.display = 'none';
+    });
 
-document.getElementById('nextBtn').addEventListener('click', () => rotateCarousel("next"));
-document.getElementById('prevBtn').addEventListener('click', () => rotateCarousel("prev"));
+    // Mostra o texto correspondente ao item ativo
+    const currentText = document.querySelector('.carousel-item.active .carousel-text');
+    if (currentText) {
+        currentText.style.display = 'block';
+    }
+}
 
-// Inicializa o carrossel
+// Atualiza o carrossel e o texto
+function rotateCarousel(direction) {
+    if (direction === "next") {
+        currentIndex = (currentIndex + 1) % totalItems;
+    } else {
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+    }
+
+    angle -= 360 / totalItems * (direction === "next" ? 1 : -1);
+    positionItems();
+    showTextForCurrentItem(); // Atualiza o texto ao trocar a imagem
+}
+
+// Inicializa o carrossel e mostra o texto para o primeiro item
 positionItems();
+showTextForCurrentItem();
 
-// Suporte para arrastar no celular
+// Suporte para arrastar no celular e no desktop
+carousel.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.clientX;
+});
+
+carousel.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const currentX = e.clientX;
+    const deltaX = startX - currentX;
+
+    if (deltaX > 50) {
+        rotateCarousel("next");
+        isDragging = false;
+    } else if (deltaX < -50) {
+        rotateCarousel("prev");
+        isDragging = false;
+    }
+});
+
+carousel.addEventListener('mouseup', () => {
+    isDragging = false;
+});
+
+carousel.addEventListener('mouseleave', () => {
+    isDragging = false;
+});
+
 carousel.addEventListener('touchstart', (e) => {
     isDragging = true;
     startX = e.touches[0].clientX;
