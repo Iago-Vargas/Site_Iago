@@ -1,0 +1,7 @@
+# Ignore all temporary files
+.dist
+
+# Ignore specific files or directories
+
+# Ignore development tools
+.vscode/
