@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     binaryToTextEffect("typing-text", ["Welcome!", "I am Iago! :)"], 100);
     binaryToTextEffect("typing-text2", ["Programming","languages"], 100);
+    binaryToTextEffect("typing-text3", ["- Ciência da Computação ", "- Dev. Back End e Front End"], 100);
 });
 
 /**
@@ -183,24 +184,36 @@ carousel.addEventListener('touchstart', (e) => {
     isDragging = true;
     startX = e.touches[0].clientX;
 });
-
 carousel.addEventListener('touchmove', (e) => {
     if (!isDragging) return;
     const currentX = e.touches[0].clientX;
     const deltaX = startX - currentX;
 
-    if (deltaX > 50) {
-        rotateCarousel("next");
-        isDragging = false;
-    } else if (deltaX < -50) {
-        rotateCarousel("prev");
+    // Permitir somente o movimento para a esquerda
+    if (deltaX < -50) {
+        rotateCarousel("prev"); // Somente mova para a esquerda
         isDragging = false;
     }
 });
 
+
 carousel.addEventListener('touchend', () => {
     isDragging = false;
 });
+
+// Adiciona botões de navegação para o carrossel
+const nextButton = document.createElement('button');
+nextButton.classList.add('carousel-button', 'next');
+nextButton.innerHTML = '<i class="fas fa-chevron-left"></i>'; // Ícone de seta para a direita
+nextButton.addEventListener('click', () => rotateCarousel('next'));
+
+const prevButton = document.createElement('button');
+prevButton.classList.add('carousel-button', 'prev');
+prevButton.innerHTML = '<i class="fas fa-chevron-right"></i>'; // Ícone de seta para a esquerda
+prevButton.addEventListener('click', () => rotateCarousel('prev'));
+
+carousel.parentElement.appendChild(nextButton);
+carousel.parentElement.appendChild(prevButton);
 
 /*particulas */
 
