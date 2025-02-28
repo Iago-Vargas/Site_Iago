@@ -191,13 +191,13 @@ body {
     justify-content: center; /* Centraliza verticalmente */
     gap: 10px; /* Espaço entre os textos */
     color: white;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     max-width: 80%;
     padding: 10px;
     text-align: center;
     position: absolute;
-    top: -100px; 
-    left: 30px;
+    top: 60px; 
+    left: 89px;
     transform: translate(-50%, -50%);
 }
 #typing-text3 {
@@ -259,7 +259,15 @@ body {
     right: 20px;
     top: 0px; /* Ajuste conforme necessário para descer a imagem */
 }
-
+.carousel3 img {
+    margin-top: 0px; /* Espaço entre o texto e a imagem adicional */
+    width: 200px; /* Ajuste o tamanho da imagem adicional conforme necessário */
+    height: auto;
+    background-color: transparent; /* Remove o fundo preto */
+    position: relative;
+    right: 20px;
+    top: 80px; /* Ajuste conforme necessário para descer a imagem */
+}
 /*Ativamos os Carroseis */
 .carousel-item.active .carousel1,
 .carousel-item.active .carousel2,
@@ -333,8 +341,10 @@ body {
     text-shadow: 0 0 5px #F9AC5C, 0 0 10px #F9AC5C;
     text-decoration: none; 
 }
-
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+    /* Ajustes específicos para telas de notebook */
+}
+@media (max-width: 1024px) {
     .windows-nav {
         width: 90%; 
         left: 50%;

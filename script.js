@@ -1,7 +1,18 @@
+const mensagens = [
+    "Estudante de Ciência da Computação",
+    "com objetivo de me desenvolver",
+    "e me divertir fazendo o que amo!",
+    "Este site foi desenvolvido por mim",
+    "para mostrar meus projetos",
+    "mostrar meus jogos, mini-games,",
+    "e muitos projetos futuros.",
+    "Sinta-se à vontade para explorar!",
+    "Espero que goste! :)"
+];
 document.addEventListener('DOMContentLoaded', () => {
-    binaryToTextEffect("typing-text", ["Welcome!", "I am Iago! :)"], 100);
-    binaryToTextEffect("typing-text2", ["Programming","languages"], 100);
-    binaryToTextEffect("typing-text3", ["- Ciência da Computação ", "- Dev. Back End e Front End"], 100);
+    binaryToTextEffect("typing-text", ["Bem Vindo!", "Me chamo Iago", ":)"], 100);
+    binaryToTextEffect("typing-text2", ["Linguagens","Programação"], 100);
+    binaryToTextEffect("typing-text3", mensagens, 100);
 });
 
 /**
