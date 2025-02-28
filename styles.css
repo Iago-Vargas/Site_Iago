@@ -149,8 +149,8 @@ body {
 /* Definindo valores da primeira imagem*/
 #typing-text{
     font-family: 'Courier New', Courier, monospace;
-    color: #EBECEB;
-    text-shadow: 0 0 5px #160D08, 0 0 10px #160D08;
+    color: #160D08;
+    text-shadow: 0 0 5px #F9AC5C, 0 0 10px #F9AC5C;
     padding: 10px;
     border-radius: 8px;
     white-space: pre; /* Permite a quebra de linha */
@@ -177,8 +177,8 @@ body {
 /* Definindo valores da segunda imagem*/
 #typing-text2 {
     font-family: 'Courier New', Courier, monospace;
-    color: #EBECEB;
-    text-shadow: 0 0 5px #160D08, 0 0 10px #160D08;
+    color: #160D08;
+    text-shadow: 0 0 5px #F9AC5C, 0 0 10px #F9AC5C;
     padding: 10px;
     border-radius: 8px;
     white-space: pre; /* Permite a quebra de linha */
@@ -202,8 +202,8 @@ body {
 }
 #typing-text3 {
     font-family: 'Courier New', Courier, monospace;
-    color: #EBECEB;
-    text-shadow: 0 0 5px #160D08, 0 0 10px #160D08;
+    color: #160D08;
+    text-shadow: 0 0 5px #F9AC5C, 0 0 10px #F9AC5C;
     padding: 10px;
     border-radius: 8px;
     white-space: pre; /* Permite a quebra de linha */
