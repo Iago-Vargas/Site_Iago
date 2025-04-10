@@ -1,0 +1,37 @@
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #1a1a1a;
+    z-index: -1; 
+}
+.mensagem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center; 
+}
+.imagem {
+    height: 500px;
+    margin-bottom: 20px; 
+}
+.texto {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    color: #EBECEB;
+    text-shadow: 0 0 5px #F9AC5C, 0 0 10px #F9AC5C;
+}
+@media (max-width: 768px) {
+    .imagem {
+        height: auto;
+        width: 170%;
+    }
+
+    .texto {
+        font-size: 1.2rem; 
+    }
+}

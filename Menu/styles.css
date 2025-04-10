@@ -1,0 +1,427 @@
+/* Adicione este CSS ao seu arquivo styles.css */
+
+/* Estilos gerais */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Ajusta para começar do topo */
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Aqui definimos o WallPaper, as particulas */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #1a1a1a;
+    z-index: -1;  /* Asegure que as partículas fiquem atrás de outros elementos */
+}
+
+/* A barra, esta é a estrutura dela */
+.windows-nav {
+    background-color: rgb(32, 32, 32);
+    padding: 13px 25px; /* Reduz o padding */
+    border-radius: 0 0 10px 10px; /* Bordas retas na parte superior e curvas na parte inferior */
+    border-left: 1px solid #F9AC5C; /* Borda ao redor da barra de navegação */
+    border-right: 1px solid #F9AC5C; /* Borda ao redor da barra de navegação */
+    border-bottom: 1px solid #F9AC5C; /* Borda ao redor da barra de navegação */
+    box-shadow: 0 0 30px #F9AC5C; /* Efeito de sombra LED */
+    top: 0; /* Ajusta a posição para o topo */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%; /* Ajusta a largura */
+    max-width: 500px; /* Ajusta a largura máxima */
+    z-index: 1000;
+    position: fixed;
+    display: flex;
+    justify-content: center; /* Centraliza os itens do menu */
+    align-items: center;
+}
+
+/* Conteúdo da barra de navegação */
+.nav-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between; /* Espaça os itens do menu */
+}
+
+/* O menu da configuração */
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    justify-content: space-between; /* Espaça os itens do menu */
+    flex-wrap: nowrap; /* Permite que os itens do menu fiquem na mesma linha */
+}
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.navbar input[type="search"] {
+    width: 90%;
+    max-width: 400px;
+}
+
+/* Somente para o espaçamento entre os itens do menu */
+.menu li {
+    margin: 0 5px; /* Ajusta o espaçamento entre os itens do menu */
+}
+
+/* Estilo dos links do menu */
+.menu li a {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 12px; /* Ajuste o tamanho do texto conforme necessário */
+    border: 1px solid rgba#48548f; /* Borda azul fraca na parte superior */
+    border-bottom: 2px solid rgba#48548f; /* Borda azul forte na parte inferior */
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px; /* Ajusta o padding */
+    border-radius: 20px; /* Ajusta o border-radius */
+    transition: box-shadow 0.3s ease;
+}
+
+/* Efeito de sombra ao passar o mouse */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Aumenta a altura do carrossel */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 220px;
+}
+
+/* Estilo do carrossel */
+.curved-carousel {
+    position: relative;
+    width: 80%;
+    height: 500px; /* Aumenta a altura do carrossel */
+    perspective: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo dos itens do carrossel */
+.carousel-item {
+    position: absolute;
+    width: 200px;
+    height: 350px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease, filter 0.5s ease;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Adiciona efeito de digitação dentro da imagem 1*/
+.typing-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 10px; 
+    color: white;
+    font-size: 1.5rem;
+    max-width: 80%;
+    padding: 10px;
+    text-align: center;
+    position: absolute;
+    top: 10px; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* Definindo valores da primeira imagem*/
+#typing-text{
+    font-family: 'Courier New', Courier, monospace;
+    color: #160D08;
+    text-shadow: 0 0 5px #F9AC5C, 0 0 10px #F9AC5C;
+    padding: 10px;
+    border-radius: 8px;
+    white-space: pre; /* Permite a quebra de linha */
+    width: auto;
+}
+
+/* Adiciona efeito e estrutura dentro da digitação da imagem 2 */
+.typing-container2 {
+    display: flex;
+    flex-direction: column; /* Organiza os textos em coluna */
+    align-items: center; /* Centraliza os textos horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    gap: 10px; /* Espaço entre os textos */
+    color: white;
+    font-size: 1.3rem;
+    max-width: 80%;
+    padding: 10px;
+    text-align: center;
+    position: absolute;
+    top: 60px; /* Ajuste conforme necessário */
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* Definindo valores da segunda imagem*/
+#typing-text2 {
+    font-family: 'Courier New', Courier, monospace;
+    color: #160D08;
+    text-shadow: 0 0 5px #F9AC5C, 0 0 10px #F9AC5C;
+    padding: 10px;
+    border-radius: 8px;
+    white-space: pre; /* Permite a quebra de linha */
+    width: auto;
+}
+.typing-container3 {
+    display: flex;
+    flex-direction: column; /* Organiza os textos em coluna */
+    align-items: center; /* Centraliza os textos horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    gap: 10px; /* Espaço entre os textos */
+    color: white;
+    font-size: 0.6rem;
+    max-width: 80%;
+    padding: 10px;
+    text-align: center;
+    position: absolute;
+    top: 60px; 
+    left: 89px;
+    transform: translate(-50%, -50%);
+}
+#typing-text3 {
+    font-family: 'Courier New', Courier, monospace;
+    color: #160D08;
+    text-shadow: 0 0 5px #F9AC5C, 0 0 10px #F9AC5C;
+    padding: 10px;
+    border-radius: 8px;
+    white-space: pre; /* Permite a quebra de linha */
+    width: auto;
+}
+/*Primeira e  Segunda imagem */
+#typing-text::after, #typing-text-2::after ,#typing-text-3::after {
+    content: "";
+    animation: blink 0.7s infinite alternate;
+}
+
+/* Define a proporção do Carrosel */
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Estrutura dos 3 carrosel se conversando entre si*/
+.carousel1, .carousel2, .carousel3 {
+    position: absolute;  
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+    font-size: 1.5rem;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    width: 80%;
+    text-align: center;
+    display: none; 
+}
+
+/* Aqui mexo na imagem de Icon que tem na primeira imagem */
+.carousel1 img {
+    margin-top: 0px; 
+    width: 200px; 
+    height: auto;
+    background-color: transparent;
+    position: relative;
+    right: 20px;
+    top: 90px; 
+}
+/* Aqui mexo na imagem de Icon que tem na segunda imagem */
+.carousel2 img {
+    margin-top: 0px; 
+    width: 200px;
+    height: auto;
+    background-color: transparent; /* Remove o fundo preto */
+    position: relative;
+    right: 20px;
+    top: 0px; 
+}
+.carousel3 img {
+    margin-top: 0px; 
+    width: 200px; 
+    height: auto;
+    background-color: transparent; 
+    position: relative;
+    right: 20px;
+    top: 80px; 
+}
+/*Ativamos os Carroseis */
+.carousel-item.active .carousel1,
+.carousel-item.active .carousel2,
+.carousel-item.active .carousel3 {
+    display: block; 
+}
+
+
+/* Estilo para os icones pulando na 2 pagina */
+.icon-spiral {
+    top: 50px;
+    left: 20px;
+    position: relative;
+    width: 90%; 
+    height: 150px; 
+    margin: 50px auto; 
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+/* Tamanho dos ícones */
+.icon-spiral img {
+    width: 30px; 
+    height: 30px;
+    animation: bounce 1s ease-in-out infinite;
+}
+/* Animação de pulinho */
+@keyframes bounce {
+    0% {
+        transform: translateY(0); 
+    }
+    30% {
+        transform: translateY(-20px); 
+    }
+    50% {
+        transform: translateY(0); 
+    }
+    70% {
+        transform: translateY(-10px); 
+    }
+    100% {
+        transform: translateY(0); 
+    }
+
+}
+/* Estilo para o contêiner de e-mail */
+.email-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    z-index: 1000; 
+    position: fixed;
+    bottom: 20px; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.email-icon {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    color: #EBECEB;
+}
+
+.email-text {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1rem;
+    color: #EBECEB;
+    text-shadow: 0 0 5px #F9AC5C, 0 0 10px #F9AC5C;
+    text-decoration: none; 
+}
+@media (max-width: 1024px) {
+    /* Ajustes específicos para telas de notebook */
+}
+@media (max-width: 1024px) {
+    .windows-nav {
+        width: 90%; 
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .typing-container2 {
+        top: 80px;
+    }
+    .nav-content {
+        flex-direction: column;
+        align-items: center; 
+    }
+    .icon-spiral {
+        top: 75px;
+    }
+    .menu {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        overflow-x: auto;
+    }
+
+    .menu li {
+        margin: 5px;
+    }
+
+    .carousel-container {
+        margin-top: 180px;
+        height: 400px; 
+    }
+    .carousel-button {
+        display: none;
+    }
+    .curved-carousel {
+        height: 400px;
+    }
+
+    .carousel-item {
+        width: 200px; 
+        height: 300px;
+    }
+    .carousel1 img {
+        top: 60px; 
+    }
+    .carousel2 img {
+        top: -20px;
+    }
+
+    .email-container {
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 20px;
+    }
+
+    .carousel-button {
+        display: none; 
+    }
+}
+
+/* Estilo dos botões de navegação do carrossel */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.carousel-button.next {
+    right: 300px;
+}
+
+.carousel-button.prev {
+    left: 300px;
+}
